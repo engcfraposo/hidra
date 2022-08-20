@@ -1,7 +1,11 @@
+import { Shipping } from './shipping/entities/shipping.entity';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { ShippingModule } from './shipping/shipping.module';
+
+
 
 @Module({
   imports: [
@@ -10,8 +14,9 @@ import { AppService } from './app.service';
       database: 'hidra.sqlite',
       synchronize: true,
       logging: true,
-      entities: [],
+      entities: [Shipping],
     }),
+    ShippingModule,
   ],
   controllers: [AppController],
   providers: [AppService],
