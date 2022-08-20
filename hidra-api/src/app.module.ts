@@ -4,6 +4,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Fornecedores } from './fornecedores/entities/fornecedores.entity';
 import { FornecedoresModule } from './fornecedores/fornecedores.module';
+import { Product } from './products/entities/product.entity';
+import { ProductsModule } from './products/products.module';
 
 @Module({
   imports: [
@@ -12,9 +14,10 @@ import { FornecedoresModule } from './fornecedores/fornecedores.module';
       database: 'hidra.sqlite',
       synchronize: true,
       logging: true,
-      entities: [Fornecedores],
+      entities: [Product, Fornecedores],
     }),
     FornecedoresModule,
+    ProductsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
