@@ -33,7 +33,7 @@ O banco será feito com a finalidade de cria um software de controle de uma empr
  * CEP
  
  Ordem
- *Produtos [1:N]
- *Fornecedores [1:N]
- *Empresa de Frete [1:N]
- *Cliente [1:N]
+ * Produtos [1:N]
+ * Fornecedores [1:N]
+ * Empresa de Frete [1:N]
+ * Cliente [1:N]
