@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { Fornecedores } from './fornecedores/entities/fornecedores.entity';
+import { FornecedoresModule } from './fornecedores/fornecedores.module';
 
 @Module({
   imports: [
@@ -10,8 +12,9 @@ import { AppService } from './app.service';
       database: 'hidra.sqlite',
       synchronize: true,
       logging: true,
-      entities: [],
+      entities: [Fornecedores],
     }),
+    FornecedoresModule,
   ],
   controllers: [AppController],
   providers: [AppService],
