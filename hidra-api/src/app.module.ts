@@ -1,11 +1,13 @@
-import { Shipping } from './shipping/entities/shipping.entity';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ShippingModule } from './shipping/shipping.module';
-
-
+import { Shipping } from './shipping/entities/shipping.entity';
+import { Fornecedores } from './fornecedores/entities/fornecedores.entity';
+import { FornecedoresModule } from './fornecedores/fornecedores.module';
+import { Product } from './products/entities/product.entity';
+import { ProductsModule } from './products/products.module';
 
 @Module({
   imports: [
@@ -14,9 +16,11 @@ import { ShippingModule } from './shipping/shipping.module';
       database: 'hidra.sqlite',
       synchronize: true,
       logging: true,
-      entities: [Shipping],
+      entities: [Product, Shipping, Fornecedores],
     }),
     ShippingModule,
+    FornecedoresModule,
+    ProductsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
