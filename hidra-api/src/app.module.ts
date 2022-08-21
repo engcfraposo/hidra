@@ -8,6 +8,7 @@ import { Fornecedores } from './fornecedores/entities/fornecedores.entity';
 import { FornecedoresModule } from './fornecedores/fornecedores.module';
 import { Product } from './products/entities/product.entity';
 import { ProductsModule } from './products/products.module';
+import { CustomersModule } from './customers/customers.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { ProductsModule } from './products/products.module';
     ShippingModule,
     FornecedoresModule,
     ProductsModule,
+    CustomersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
